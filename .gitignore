@@ -1,4 +1,7 @@
 bug/
-./pyspider/data
+
+### pyspider ###
+pyspider/data/
+pyspider/logs/
 
 
