@@ -20,7 +20,7 @@ class Handler(BaseHandler):
     }
 
     def load_conf(self): #加载配置 url
-        f = open('./conf.json', encoding='utf-8')  # 打开json文件
+        f = open('./51job_conf.json', encoding='utf-8')  # 打开json文件
         res = f.read()  # 读文件
         dict = json.loads(res)
         f.close()
