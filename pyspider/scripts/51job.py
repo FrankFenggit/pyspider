@@ -42,7 +42,7 @@ class Handler(BaseHandler):
             mylogger.info(url)
             self.crawl(url, callback=self.index_page, validate_cert=False, fetch_type='js')
 
-    @config(age=1 * 60 * 60)
+    @config(age=0.5 * 60 * 60)
     def index_page(self, response):
         mylogger.info("call index_page")
         # 职位列表跳转
