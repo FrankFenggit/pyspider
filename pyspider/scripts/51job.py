@@ -74,6 +74,6 @@ class Handler(BaseHandler):
             mylogger.info("call on_result if not result")
             return
         mylogger.info("call on_result")
-        mylogger.debug("result")
+        mylogger.debug(result)
         return super(Handler, self).on_result(result)
 
