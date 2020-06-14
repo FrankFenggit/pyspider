@@ -50,8 +50,9 @@ class Handler(BaseHandler):
             mylogger.info("职位列表url: " + each.attr.href)
             self.crawl(each.attr.href, callback=self.detail_page, validate_cert=False, fetch_type='js')
         # 翻页
-        mylogger.info("翻页url: " + "分页".join([x.attr.href for x in response.doc('#resultList  .bk>a').items()]))
-        self.crawl([x.attr.href for x in response.doc('#resultList  .bk>a').items()], callback=self.index_page,
+        detail_url_list=[x.attr.href for x in response.doc('#resultList  .bk>a').items()]
+        mylogger.info("翻页url: " + "分页".join(detail_url_list))
+        self.crawl(detail_url_list, callback=self.index_page,
                    validate_cert=False, fetch_type='js')
 
     @config(priority=2)
@@ -73,6 +74,6 @@ class Handler(BaseHandler):
             mylogger.info("call on_result if not result")
             return
         mylogger.info("call on_result")
-        mylogger.info(result)
+        mylogger.debug("result")
         return super(Handler, self).on_result(result)
 
