@@ -60,6 +60,7 @@ class Handler(BaseHandler):
         mylogger.info("call detail_page")
         result = {
             "url": response.url,
+            "proj_name": self.project_name,
             "job_title": response.doc('h1').text(),
             "job_salary": response.doc('.job-item-title').text(),
             "job_comp": response.doc('h3 > a').text(),
