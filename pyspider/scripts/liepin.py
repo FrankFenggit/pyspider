@@ -20,8 +20,10 @@ class Handler(BaseHandler):
     crawl_config = {
     }
 
-    def load_conf(self):  # 加载配置 url
-        f = open('./liepin_conf.json', encoding='utf-8')  # 打开json文件
+    def load_conf(self): #加载配置 url
+        conf_file="./%s_conf.json"%(self.project_name)
+        mylogger.info("[conf_file:%s]"%(conf_file))
+        f = open(conf_file, encoding='utf-8')  # 打开json文件
         res = f.read()  # 读文件
         dict = json.loads(res)
         f.close()
