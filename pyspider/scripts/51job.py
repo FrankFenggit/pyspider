@@ -33,7 +33,7 @@ class Handler(BaseHandler):
                 continue
             self.baseUrl.append(url)
     def cleardb(self,dbpath,dbtbl_name):  # delete table 有时候无效 ，采用drop table
-        mylogger.info("call %d "%(sys._getframe().f_code.co_name))
+        mylogger.info("call %s "%(sys._getframe().f_code.co_name))
         try:
             conn = sqlite3.connect(dbpath)
             c = conn.cursor()
@@ -64,7 +64,7 @@ class Handler(BaseHandler):
 
     @every(minutes=1 * 60)
     def on_start(self):
-        mylogger.info("call %d "%(sys._getframe().f_code.co_name))
+        mylogger.info("call %s "%(sys._getframe().f_code.co_name))
         # 清空数据库 重新启动爬虫任务
         dbtbl_name="resultdb_"+self.project_name
         self.cleardb('./data/result.db',dbtbl_name);
@@ -73,12 +73,12 @@ class Handler(BaseHandler):
         # 加载配置
         self.load_conf();
         for url in self.baseUrl:
-            mylogger.info(url)
+            mylogger.info("[baseUrl:%s]"%(url))
             self.crawl(url, callback=self.index_page, validate_cert=False, fetch_type='js')
 
     @config(age=0.5 * 60 * 60)
     def index_page(self, response):
-        mylogger.info("call %d "%(sys._getframe().f_code.co_name))
+        mylogger.info("call %s "%(sys._getframe().f_code.co_name))
         # 职位列表跳转
         for each in response.doc('#resultList p > span > a').items():
             mylogger.info("职位列表url: " + each.attr.href)
@@ -91,7 +91,7 @@ class Handler(BaseHandler):
 
     @config(priority=2)
     def detail_page(self, response):
-        mylogger.info("call %d "%(sys._getframe().f_code.co_name))
+        mylogger.info("call %s "%(sys._getframe().f_code.co_name))
         return {
             "url": response.url,
             "proj_name": self.project_name,
