@@ -6,7 +6,7 @@ pyspider/logs/*.log
 
 ### jobsWeb ###
 
-jobsWeb\**\.idea/
-jobsWeb\**\__pycache__/
-jobsWeb\data/**
+jobsWeb/**/.idea/
+jobsWeb/**/__pycache__/
+jobsWeb/data/**
 pyspider/logs/*.log
