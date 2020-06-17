@@ -8,5 +8,5 @@ pyspider/logs/*.log
 jobsWeb/**/__pycache__/
 jobsWeb/data/**
 jobsWeb/logs/*.log
-jobsWeb/venv/
+jobsWeb/venv
 !jobsWeb/venv/requirements.txt
