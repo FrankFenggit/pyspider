@@ -2,6 +2,30 @@
     "baseUrl_list": [
       {
         "url": "https://search.51job.com/list/180200,000000,0000,00,2,08,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
-      }
+      },
+	  {
+		"bref": "c++ 武汉 5w已上",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,12,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  },
+	  {
+		"bref": "c++ 武汉 4-5w",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,11,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  },
+	  {
+		"bref": "c++ 武汉 3-5w",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,10,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  },
+	  {
+		"bref": "c++ 武汉 2-3w",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,09,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  },
+	  {
+		"bref": "c++ 武汉 1.5-2w",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,08,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  },
+	  {
+		"bref": "c++ 武汉 1-1.5w",
+		"url": "https://search.51job.com/list/180200,000000,0000,00,2,07,c%252B%252B,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare="
+	  }
     ]
 }
