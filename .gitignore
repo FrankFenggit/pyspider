@@ -7,4 +7,6 @@ pyspider/logs/*.log
 ### jobsWeb ###
 jobsWeb/**/__pycache__/
 jobsWeb/data/**
-pyspider/logs/*.log
+jobsWeb/logs/*.log
+jobsWeb/venv/
+!jobsWeb/venv/requirements.txt
