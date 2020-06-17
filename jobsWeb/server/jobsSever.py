@@ -8,7 +8,7 @@ class JobsServer:
         self.pages = 0
         self.jobs_total = 0
     def get_jobs_by_page(self,page=1):
-        jobs =  TblJobs51job.query.filter(TblJobs51job.job_salary>0).order_by(TblJobs51job.job_comp,TblJobs51job.job_salary.desc()).paginate(int(page), int(JobsServer.NUMS_PER_PAGE),False)
+        jobs =  TblJobs51job.query.filter(TblJobs51job.job_salary>0).order_by(TblJobs51job.job_salary.desc()).paginate(int(page), int(JobsServer.NUMS_PER_PAGE),False)
         self.pages = jobs.pages
         self.jobs_total = jobs.total
         return  jobs.items

@@ -87,7 +87,22 @@ class JobsParseServer:
         return each["job_comp"]
 
     def _parse_job_addr(selt, each):
-        return each["job_addr"]
+        ret = ""
+        patten='\uff1a' # 上班地址：光谷APP广场2号楼17层
+        addr_split = re.split(patten,each["job_addr"])
+        len_addr_split = len(addr_split)
+        if len_addr_split==1:
+            ret = addr_split[0].strip()
+            mylogger.warning("[addr_split[0]:%s]"%(addr_split[0]))
+        elif len_addr_split==2:
+            ret = addr_split[1].strip()
+        elif len_addr_split>2:
+            ret = addr_split[1].strip()
+            mylogger.error("[addr_split[0]:%s]" % (addr_split[0]))
+
+        return ret
+
+
 
     def _parse_job_time(selt, each):
         ret = ""
