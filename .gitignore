@@ -4,4 +4,9 @@ bug/
 pyspider/data/
 pyspider/logs/*.log
 
+### jobsWeb ###
 
+jobsWeb\**\.idea/
+jobsWeb\**\__pycache__/
+jobsWeb\data/**
+pyspider/logs/*.log
