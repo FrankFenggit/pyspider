@@ -1,6 +1,7 @@
 bug/
 
 ### pyspider ###
+pyspider/**/__pycache__/
 pyspider/data/
 pyspider/logs/*.log
 
