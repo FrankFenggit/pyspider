@@ -10,4 +10,4 @@ jobsWeb/**/__pycache__/
 jobsWeb/data/**
 jobsWeb/logs/*.log
 jobsWeb/venv
-!jobsWeb/venv/requirements.txt
+!/jobsWeb/venv/requirements.txt
