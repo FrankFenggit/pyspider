@@ -1,4 +1,9 @@
+[TOC]
+
+
+
 # pyspider
+
 求职者爬虫
 
 ## 框架简介
@@ -95,3 +100,20 @@ Python 3.5中引入了async，它们在Python 3.7中成为关键字，所以需�
 [中文文档]: http://www.pyspider.cn/
 [入门视频]: https://www.bilibili.com/video/BV1vW411T7qD?from=search&amp;seid=8495872054225096531
 
+# web开发： jobsWeb
+
+- 拿到爬虫数据，解析，展示
+- 引用flask框架
+- 开发工具：pycharm
+
+## 雕虫小计
+
+### model逆向（model代码自动生成，一个字爽）
+
+使用 flask-sqlacodegen工具
+
+```powershell
+pip install flask-sqlacodegen
+
+flask-sqlacodegen sqlite:///D:/codes/spider/jobsWeb/data/result.db --outfile 'model.py' --flask
+```
