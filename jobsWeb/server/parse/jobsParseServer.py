@@ -67,10 +67,11 @@ class JobsParseServer:
         pattern='\u5e74'
         matchobj=re.search(pattern,salary)
         if not matchobj:
-            mylogger.warning("[salary_list:%s][salary:%s]"%(salary_list,salary))
+            pass
         else:
             for i in range(length):
                 salary_list[i] = salary_list[i]/12
+            mylogger.warning("[salary_list:%s][salary:%s]" % (salary_list, salary))
 
         if not length:
             return 0
@@ -93,13 +94,12 @@ class JobsParseServer:
         len_addr_split = len(addr_split)
         if len_addr_split==1:
             ret = addr_split[0].strip()
-            mylogger.warning("[addr_split[0]:%s]"%(addr_split[0]))
+            mylogger.warning("[each[\"job_addr\"]:%s]"%(each["job_addr"]))
         elif len_addr_split==2:
             ret = addr_split[1].strip()
         elif len_addr_split>2:
             ret = addr_split[1].strip()
-            mylogger.error("[addr_split[0]:%s]" % (addr_split[0]))
-
+            mylogger.warning("[each[\"job_addr\"]:%s]"%(each["job_addr"]))
         return ret
 
 
