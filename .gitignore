@@ -1,4 +1,5 @@
 bug/
+.idea/
 
 ### pyspider ###
 pyspider/**/__pycache__/
