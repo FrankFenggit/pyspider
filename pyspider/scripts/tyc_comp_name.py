@@ -80,10 +80,10 @@ class Handler(BaseHandler):
     def on_start(self):
         mylogger.info("call %s " % (sys._getframe().f_code.co_name))
         # 清空数据库 重新启动爬虫任务
-        dbtbl_name = "resultdb_" + self.project_name
-        self.cleardb('./data/result.db', dbtbl_name);
-        dbtbl_name = "taskdb_" + self.project_name
-        self.cleardb('./data/task.db', dbtbl_name);
+        # dbtbl_name = "resultdb_" + self.project_name
+        # self.cleardb('./data/result.db', dbtbl_name);
+        # dbtbl_name = "taskdb_" + self.project_name
+        # self.cleardb('./data/task.db', dbtbl_name);
         # 加载配置
         comp_name_tojson = CompNameToJsonUrl("./data/comp_name.txt", "./%s_conf.json" % (self.project_name))
         comp_name_tojson.to_json()
