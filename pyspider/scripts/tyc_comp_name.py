@@ -6,15 +6,9 @@
 from pyspider.libs.base_handler import *
 import json, sqlite3, re
 
-import logging, logging.config
-
-from scripts.tyc_comp_name_lib import CompNameToJsonUrl
+from scripts.typ_comp_name.jsonconf4url import CompNameToJsonUrl
 from lib.urlParse import url_parse
-
-logging.config.fileConfig('logging.conf')
-
-# create logger
-mylogger = logging.getLogger(name="fileLogger")
+from lib.mylog import mylogger
 
 
 class Handler(BaseHandler):
@@ -75,6 +69,7 @@ class Handler(BaseHandler):
     def __init__(self):
         # 搜索URL基线
         self.baseUrl = []
+        self.comp_name_tojson = CompNameToJsonUrl("./data/comp_name.txt", "./%s_conf.json" % (self.project_name))
 
     @every(minutes=1* 24 * 60)
     def on_start(self):
@@ -85,8 +80,8 @@ class Handler(BaseHandler):
         # dbtbl_name = "taskdb_" + self.project_name
         # self.cleardb('./data/task.db', dbtbl_name);
         # 加载配置
-        comp_name_tojson = CompNameToJsonUrl("./data/comp_name.txt", "./%s_conf.json" % (self.project_name))
-        comp_name_tojson.to_json()
+        self.comp_name_tojson.to_path = "./%s_conf.json" % (self.project_name)
+        self.comp_name_tojson.to_json()
         self.load_conf();
         for url in self.baseUrl:
             mylogger.info("[baseUrl:%s]" % (url))
@@ -131,4 +126,11 @@ class Handler(BaseHandler):
         mylogger.info("call on_result")
         mylogger.debug(result)
         return super(Handler, self).on_result(result)
+
+    def on_finished(self, response, task):
+        mylogger.info("call %s " % (sys._getframe().f_code.co_name))
+        self.comp_name_tojson.chg_status(CompNameToJsonUrl.KEY_FINISHED)
+        mylogger.info(self)
+        mylogger.info(response)
+        mylogger.info(task)
 

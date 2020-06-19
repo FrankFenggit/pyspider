@@ -7,14 +7,7 @@ from pyspider.libs.base_handler import *
 import json
 import sqlite3
 
-import logging
-import logging.config
-
-logging.config.fileConfig('logging.conf')
-
-# create logger
-mylogger = logging.getLogger(name="fileLogger")
-
+from lib import mylogger
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -111,4 +104,10 @@ class Handler(BaseHandler):
         mylogger.info("call on_result")
         mylogger.debug(result)
         return super(Handler, self).on_result(result)
+
+    def on_finished(self, response, task):
+        mylogger.info("call %s " % (sys._getframe().f_code.co_name))
+        mylogger.info(self)
+        mylogger.info(response)
+        mylogger.info(task)
 
